@@ -8,6 +8,10 @@
     <!-- Main Style -->
     <link href="css/main.css" rel="stylesheet">
     
+    <!-- Supersized -->
+    <link href="css/supersized.css" rel="stylesheet">
+    <link href="css/supersized.shutter.css" rel="stylesheet">
+    
     <!-- Font Icons -->
     <link href="css/fonts.css" rel="stylesheet">
     
@@ -21,6 +25,25 @@
 
 </head>
 <body>
+    
+    <!-- Homepage Slider -->
+    <div id="home-slider">	
+        <div class="overlay"></div>
+
+        <div class="slider-text">
+            <div id="slidecaption"></div>
+        </div>   
+
+        <div class="control-nav">
+            <a id="prevslide" class="load-item"><i class="font-icon-arrow-simple-left"></i></a>
+            <a id="nextslide" class="load-item"><i class="font-icon-arrow-simple-right"></i></a>
+            <ul id="slide-list"></ul>
+
+            <a id="nextsection" href="#work"><i class="font-icon-arrow-simple-down"></i></a>
+        </div>
+    </div>
+    <!-- End Homepage Slider -->
+    
 	<!-- Header -->
     <header>
         <div class="sticky-nav">
@@ -57,6 +80,8 @@
     
     <!-- Js -->
     <script src="js/jquery.1.11.3.js"></script> <!-- jQuery Core -->
+    <script src="js/supersized.3.2.7.js"></script> <!-- Home page slider -->
+    <script src="js/supersized.shutter.1.1.js"></script> <!-- Home page slider -->
     <script src="js/jquery.waypoints.4.0.0.js"></script> <!-- WayPoints - for navigation-->
     <script src="js/jquery.waypoints.sticky.4.0.0.js"></script> <!-- Waypoints - for navigationr -->
     <script src="js/jquery.easing.1.11.4.js"></script> <!-- jQuery Easing - for navigation -->
