@@ -117,6 +117,38 @@ slider = function(){
 
 }
 
+/* ==================================================
+   FancyBox
+================================================== */
+
+fancyBox = function(){
+	$(".fancybox").fancybox({
+        padding : 0,
+        nextEffect : 'none',
+        prevMethod : 'empty',
+		openEffect	: 'none',
+		closeEffect	: 'none',
+        beforeLoad: function() {
+            var el, id = $(this.element).data('title-id');
+
+            if (id) {
+                el = $('#' + id);
+            
+                if (el.length) {
+                    this.title = el.html();
+                }
+            }
+        },
+        tpl: {
+            next: '<a title="Следующая" class="fancybox-nav fancybox-next" href="javascript:;"><span><i class="font-icon-arrow-simple-right"></i></span></a>',
+            prev: '<a title="Предыдущая" class="fancybox-nav fancybox-prev" href="javascript:;"><span><i class="font-icon-arrow-simple-left"></i></span></a>',
+            closeBtn:'<a title="Закрыть" class="fancybox-item fancybox-close" href="javascript:;"><i class="font-icon-remove"></i></a>'
+        }
+	});
+    
+}
+
+
 
 /* ==================================================
 	Init
@@ -129,6 +161,7 @@ $(document).ready(function(){
 	mobileNav();
 	listenerMenu();
 	menu();
+    fancyBox();
 });
 
 $(window).resize(function(){
@@ -136,3 +169,12 @@ $(window).resize(function(){
 });
 
 });
+
+(function ($, F) {
+    
+    // Opening animation - fly from the top
+    F.transitions.empty = function() {
+        F.previous.wrap.trigger('onReset').remove();
+    };
+
+}(jQuery, jQuery.fancybox));
